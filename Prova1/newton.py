@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # newton.py: estima as raízes das funções pelo método de newton
 
+
 def metodoNewton(fn, dfn, x0, erro):
     if dfn==0:
         print("Erro, não é possível usar o método")
