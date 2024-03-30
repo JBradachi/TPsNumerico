@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 # cordas.py: estima raízes pelo método das cordas
 
-<<<<<<< HEAD
-def cordas(fn, x0, x1, prec):
-    "Aplica o método das cordas para estimar a raiz da função"
-=======
 # NOTA é usada aqui uma pequena variação do método das cordas em relação ao que
 # O Lúcio passou na aula. Essa forma não assume nenhum ponto fixo, sendo
 # portanto semelhante ao método Pégaso, mas sem o artíficio mais sofisticado
@@ -14,7 +10,6 @@ def cordas(fn, x0, x1, prec):
     Aplica o método das cordas para estimar a raiz da função
     Retorna a raiz aproximada e o número de iterações
     """
->>>>>>> 42b1723f1f7f2e702f3986f55f2a9557ae39300a
     # Estabelece um limite de iterações, evita loops infinitos
     n = 0
     MAX_ITERS = 1000
@@ -25,14 +20,9 @@ def cordas(fn, x0, x1, prec):
         # útil quando a forma analítica da função não é conhecida
         x = (x0 * fn(x1) - x1 * fn(x0)) / (fn(x1) - fn(x0))
         erro = abs(x - x1) / x1
-<<<<<<< HEAD
         print("n=", n, "xn=", x, "x0=", x0, "x1=", x1, "fn=", (fn(x)) , "erro=", erro)
         if erro < prec:
             return x, erro  # precisão desejada foi alcançada
-=======
-        if erro < prec:
-            return x, n  # precisão desejada foi alcançada
->>>>>>> 42b1723f1f7f2e702f3986f55f2a9557ae39300a
         # Do contrário, o processo continua com novos valores para x0 e x1
         x0, x1 = x1, x
     return x, n  # limite de iterações atingido, retorna melhor aproximação

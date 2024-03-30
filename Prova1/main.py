@@ -4,7 +4,8 @@
 # e comparar os métodos
 
 def main():
-    import bissec, cordas, newton
+    import bissec, cordas, newton, interacaoLinear, math
+    from sys import exit
 
     print("======= Máquina de aproximação de raiz quadrada =======")
     n = int(input("Digite um número: "))
@@ -12,6 +13,7 @@ def main():
     print("1. Bissecção")
     print("2. Cordas (secantes)")
     print("3. Newton")
+    print("4. Iteração Linear")
     op = int(input("Índice do método: "))
 
     # Isola a raiz em um intervalo
@@ -23,6 +25,15 @@ def main():
         "Equação simples para a aproximação"
         return x * x - n
     prec = 0.000000000000001
+    
+    # Exemplo de aplicação x^3-x-1
+    def eqIntL(x):
+        return (math.pow(x, 3)) - x - 1
+    # F(x) Obtida isolando x^3  ((x+1)^(1/3))
+    def FeqIntL(x):
+       return math.pow((x+1), 1/3)
+    
+        
     match op:
         case 1:
             sqrt_n, iters = bissec.bissec(eqn, a, b, prec)
@@ -31,12 +42,14 @@ def main():
         case 3:
             x0 = (a + b) / 2 # chute inicial razoável
             sqrt_n, iters = newton.newton(eqn, lambda x: 2 * x, x0, prec)
+        case 4:
+            res, n = interacaoLinear.interacaoLinear(eqIntL,  FeqIntL, 1.5, 0.000000000000001)
+            print(f"\nValor aproximado: {res} (iterações = {n})")
+            exit(0)
         case _:
-            from sys import exit
-            exit(1)
+            exit(0)
 
-    from math import sqrt
-    ex = sqrt(n)
+    ex = math.sqrt(n)
     print(f"\n=> Valor aproximado: {sqrt_n} (iterações: {iters})")
     print(f"Valor exato: {ex}")
 
