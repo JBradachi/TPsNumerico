@@ -4,7 +4,7 @@
 # e comparar os métodos
 
 def main():
-    import bissec, cordas, newton, interacaoLinear, math
+    import bissec, cordas, newton, interacaoLinear, math, pegaso
     from sys import exit
 
     print("======= Máquina de aproximação de raiz quadrada =======")
@@ -13,7 +13,8 @@ def main():
     print("1. Bissecção")
     print("2. Cordas (secantes)")
     print("3. Newton")
-    print("4. Iteração Linear")
+    print("4. Interação Linear")
+    print("5. Pegaso")
     op = int(input("Índice do método: "))
 
     # Isola a raiz em um intervalo
@@ -46,6 +47,8 @@ def main():
             res, n = interacaoLinear.interacaoLinear(eqIntL,  FeqIntL, 1.5, 0.000000000000001)
             print(f"\nValor aproximado: {res} (iterações = {n})")
             exit(0)
+        case 5:
+            sqrt_n, iters = pegaso.pegaso(eqn, a, b, prec)
         case _:
             exit(0)
 
