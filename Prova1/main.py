@@ -4,7 +4,7 @@
 # e comparar os métodos
 
 def main():
-    import bissec, cordas, newton
+    import bissec, cordas, newton, pegaso
 
     print("======= Máquina de aproximação de raiz quadrada =======")
     n = int(input("Digite um número: "))
@@ -12,6 +12,7 @@ def main():
     print("1. Bissecção")
     print("2. Cordas (secantes)")
     print("3. Newton")
+    print("4. Pégaso (secantes modificadas)")
     op = int(input("Índice do método: "))
 
     # Isola a raiz em um intervalo
@@ -31,6 +32,8 @@ def main():
         case 3:
             x0 = (a + b) / 2 # chute inicial razoável
             sqrt_n, iters = newton.newton(eqn, lambda x: 2 * x, x0, prec)
+        case 4:
+            sqrt_n, iters = pegaso.pegaso(eqn, a, b, prec)
         case _:
             from sys import exit
             exit(1)
