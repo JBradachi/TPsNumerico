@@ -4,7 +4,7 @@
 # e comparar os métodos
 
 def main():
-    import bissec, cordas, newton, interacaoLinear, math, pegaso
+    import bissec, cordas, newton, iter_linear, math, pegaso
     from sys import exit
 
     print("======= Máquina de aproximação de raiz quadrada =======")
@@ -42,7 +42,7 @@ def main():
             x0 = (a + b) / 2 # chute inicial razoável
             sqrt_n, iters = newton.newton(eqn, lambda x: 2 * x, x0, prec)
         case 4:
-            res, n = interacaoLinear.interacaoLinear(eqIntL,  FeqIntL, 1.5, 0.000000000000001)
+            res, n = iter_linear.iteracaoLinear(eqIntL,  FeqIntL, 1.5, 0.000000000000001)
             print(f"\nValor aproximado: {res} (iterações = {n})")
             exit(0)
         case 5:

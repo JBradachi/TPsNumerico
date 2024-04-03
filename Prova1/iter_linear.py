@@ -8,7 +8,7 @@
     NOTA: F'(x0) < 1 é assumido como condição inicial!
 """
 
-def interacaoLinear(fx, Fx, x0 , prec):
+def iteracaoLinear(fx, Fx, x0 , prec):
     n = 0
     MAX_ITERS = 1000
     while n < MAX_ITERS:
