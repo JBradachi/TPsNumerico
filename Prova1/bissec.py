@@ -22,7 +22,7 @@ def bissec(fn, a, b, prec):
         a, b = (a, x0) if sinal < 0 else (x0, b)
         x = (a + b) / 2  # nova estimativa
         # Cálculo do erro e teste de precisão
-        erro = abs(x - x0) / x0
+        erro = abs(x - x0) 
         print(f"n={n}, xn={x}, a={a}, b={b}, fn={fn(x)}, erro={erro}")
         if erro < prec:
             return x, erro  # precisão desejada foi obtida

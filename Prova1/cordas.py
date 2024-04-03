@@ -20,7 +20,7 @@ def cordas(fn, x0, x1, prec):
         # emprega uma aproximação para a derivada. Isso é particularmente
         # útil quando a forma analítica da função não é conhecida
         x = (x0 * fn(x1) - x1 * fn(x0)) / (fn(x1) - fn(x0))
-        erro = abs(x - x1) / x1
+        erro = abs(x - x1)
         print(f"n={n}, xn={x}, x0={x0}, x1={x1}, fn={fn(x)}, erro={erro}")
         if erro < prec:
             return x, erro  # precisão desejada foi alcançada
