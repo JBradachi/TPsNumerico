@@ -13,7 +13,7 @@ def main():
     print("1. Bissecção")
     print("2. Cordas (secantes)")
     print("3. Newton")
-    print("4. Interação Linear")
+    print("4. Interação Linear (usa a equação x³ - x - 1)")
     print("5. Pegaso")
     op = int(input("Índice do método: "))
 
@@ -26,15 +26,13 @@ def main():
         "Equação simples para a aproximação"
         return x * x - n
     prec = 0.000000000000001
-    
+
     # Exemplo de aplicação x^3-x-1
     def eqIntL(x):
         return (math.pow(x, 3)) - x - 1
     # F(x) Obtida isolando x^3  ((x+1)^(1/3))
     def FeqIntL(x):
        return math.pow((x+1), 1/3)
-    
-        
     match op:
         case 1:
             sqrt_n, iters = bissec.bissec(eqn, a, b, prec)
@@ -55,7 +53,6 @@ def main():
     ex = math.sqrt(n)
     print(f"\n=> Valor aproximado: {sqrt_n} (iterações: {iters})")
     print(f"Valor exato: {ex}")
-
 
 if __name__ == "__main__":
     main()

@@ -9,6 +9,7 @@ def cordas(fn, x0, x1, prec):
     """
     Aplica o método das cordas para estimar a raiz da função
     Retorna a raiz aproximada e o número de iterações
+    Assume que [x0, x1] contém ao menos uma raiz
     """
     # Estabelece um limite de iterações, evita loops infinitos
     n = 0
@@ -20,7 +21,7 @@ def cordas(fn, x0, x1, prec):
         # útil quando a forma analítica da função não é conhecida
         x = (x0 * fn(x1) - x1 * fn(x0)) / (fn(x1) - fn(x0))
         erro = abs(x - x1) / x1
-        print("n=", n, "xn=", x, "x0=", x0, "x1=", x1, "fn=", (fn(x)) , "erro=", erro)
+        print(f"n={n}, xn={x}, x0={x0}, x1={x1}, fn={fn(x)}, erro={erro}")
         if erro < prec:
             return x, erro  # precisão desejada foi alcançada
         # Do contrário, o processo continua com novos valores para x0 e x1

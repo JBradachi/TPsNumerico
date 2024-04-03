@@ -16,30 +16,30 @@ def pegaso(fn, a, b, prec):
 
     while n < MAX_ITERS:
         n += 1
-        
+
 
         x = Decimal(b - ((Fb*(b-a))/(Fb-Fa))) # Encontra novo valor
         erro = abs(b - a) # Calcula o erro
 
-        print("n=", n, "xn=", x, "x0=", a, "x1=", b, "fn=", (fn(x)) , "erro=", erro)
+        print(f"n={n}, xn={x}, x0={a}, x1={b}, fn={fn(x)}, erro={erro}")
         # if (Decimal(fn(x)) == 0): # Caso o valor de f(x) seja exatamente 0, retorna a raiz exata
         #     return x, n
         if erro < prec:
             return x, n # Caso o erro seja menor que a precisão, retorna a raiz aproximada
-        
+
         # Caso o valor de f(x) e f(b) tenham sinais diferentes, o valor exato encontra-se em algum ponto entre eles, portanto atualiza-se os intervalos
         # print(f"a: {a} b: {b} x: {x}")
         # print(f"Fa: {Fa} Fb: {Fb} fn(x): {fn(x)}")
-        if (Decimal(fn(x) * Fb)) < 0: 
+        if (Decimal(fn(x) * Fb)) < 0:
             a = b
             Fa = Fb
             b = x
             Fb = fn(x)
-        
+
         # Caso contrário, atualiza-se o valor de f(a) de forma a otimizar os calculos
         elif (Decimal(fn(x)*Fb)) > 0:
             b = x
             Fb = Decimal(fn(x))
             Fa = Decimal(fn(a)*fn(b)/(fn(x)+fn(b)))
-            
+
     return x, n  # como o limite de iterações foi atingido, retorna a melhor aproximação
