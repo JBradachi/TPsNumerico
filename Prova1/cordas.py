@@ -23,7 +23,7 @@ def cordas(fn, x0, x1, prec):
         erro = abs(x - x1)
         print(f"n={n}, xn={x}, x0={x0}, x1={x1}, fn={fn(x)}, erro={erro}")
         if erro < prec:
-            return x, erro  # precisão desejada foi alcançada
+            return x, n  # precisão desejada foi alcançada
         # Do contrário, o processo continua com novos valores para x0 e x1
         x0, x1 = x1, x
     return x, n  # limite de iterações atingido, retorna melhor aproximação

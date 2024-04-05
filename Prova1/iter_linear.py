@@ -22,7 +22,7 @@ def iteracaoLinear(fx, Fx, x0 , prec):
         print(f"n={n}, xn={x0}, fn={fx(x0)}, erro={erro}, Fn={Fx(x0)}")
 
         if erro < prec:
-            return x, erro  # precisão desejada foi alcançada
+            return x, n  # precisão desejada foi alcançada
         # Do contrário, o processo continua com novos valores para x0 e x1
         x0 = x
         n += 1

@@ -25,7 +25,7 @@ def bissec(fn, a, b, prec):
         erro = abs(x - x0) 
         print(f"n={n}, xn={x}, a={a}, b={b}, fn={fn(x)}, erro={erro}")
         if erro < prec:
-            return x, erro  # precisão desejada foi obtida
+            return x, n  # precisão desejada foi obtida
         # Do contrário, o processo continua
         x0 = x
     return x, n  # limite de iterações atingido, retorna melhor aproximação
