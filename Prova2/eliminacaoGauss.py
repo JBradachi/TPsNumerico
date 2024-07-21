@@ -42,7 +42,7 @@ A = [[2, 3,-1],
 B = [5, 3, -1]
 
 
-
+print()
 pivotamento(A, B)
 X = gaus(A)
 imprimirSistema(A, B)
