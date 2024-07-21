@@ -31,18 +31,14 @@ def imprimirX(X):
      
 def imprimirSistema(A, B):
 	n = len(A)
+	print("Sistema após eliminação de Gauss:")
 	for i in range(n):
-		for j in range(n):
-			if j == n-1:
-				print(A[i][j], end="")
-			else:
-				print(A[i][j], ", ", end="")
-        
-		print("   |",B[i])
+		linha = ", ".join(f"{A[i][j]:8.4f}" for j in range(n))
+		print(f"[{linha}]  | {B[i]:8.4f}")
          
 A = [[2, 3,-1],
-           [4, 4, -3],
-           [2, -3, 1]]
+     [4, 4, -3],
+     [2, -3, 1]]
 B = [5, 3, -1]
 
 
