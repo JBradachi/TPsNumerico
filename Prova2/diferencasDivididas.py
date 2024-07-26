@@ -43,10 +43,11 @@ def calculaInterpolacao(coeficientes, x, y, xProcurado):
     for i in range(len(coeficientes)):
         produto = 1
         for j in range(i):
-            print(j)
             produto *= (xProcurado - x[j])
 
         tot += coeficientes[i]*(produto)
+        print('Resultado do calculo de cada termo : ', coeficientes[i]*(produto))
+
     return tot
 
 diferencasDivididas(x,y,xProcurado)
