@@ -1,7 +1,5 @@
 Postar (um PDF) um integrante do grupo formado por 3 ou 4 alunos: O trabalho é  criar uma função e um exemplo  para cada método.
 
-
-
 1) Interpolação: Lagrange
 
 2) Interpolação: Diferenças Finitas
