@@ -12,4 +12,4 @@ def lagrange(x, y, interpol):
         resultado += aux*y[i]
     return resultado
 
-print(lagrange(x, y, interpol))
+print(f"Valor {interpol} interpolado: {lagrange(x, y, interpol)}")
