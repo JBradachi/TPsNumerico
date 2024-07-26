@@ -1,12 +1,12 @@
 #Exemplo do livro:
-x = [0.0, 0.1, 0.3, 0.6, 1]
-y = [1.000, 2.001, 4.081, 8.296, 21.00]
-xProcurado = 0.2
+# x = [0.0, 0.1, 0.3, 0.6, 1]
+# y = [1.000, 2.001, 4.081, 8.296, 21.00]
+# xProcurado = 0.2
 
 # Outro exemplo
-# x = [0.0, 0.2, 0.3, 0.5, 0.6]
-# y = [1.008, 1.064, 1.125, 1.343, 1.512]
-# xProcurado = 0.4
+x = [0.0, 0.2, 0.3, 0.5, 0.6]
+y = [1.008, 1.064, 1.125, 1.343, 1.512]
+xProcurado = 0.4
 
 # Para facilitar o código, a matriz é calculada de cima para baixo, e não da esquerda pra direita
 def diferencasDivididas(x,y, xProcurado):
@@ -19,7 +19,6 @@ def diferencasDivididas(x,y, xProcurado):
         m[1][i] = y[i]
     for i in range(2,len(x)+1):
         for j in range(len(x)+1-i):
-            print(i,j)
             calculaDiferenca(i, j, m)
     print('Matriz de diferenças divididas:')
     printaMatriz(m)
