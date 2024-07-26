@@ -29,14 +29,14 @@ def gaussJacobi(m, valoresIniciais, numeroDeIteracoes=0, erro=0):
             for x in range(len(valoresAtualizados)):
                 valoresNovos[x] = calculaIteracao(m[x], x, valoresAtualizados)
             valoresAtualizados = valoresNovos.copy()
+            print("Valores de x para a iteração atual: ", valoresAtualizados)
             fim = valoresNovos
             erros = [abs(abs(fim[i]) - abs(ini[i])) for i in range(len(fim))]
-            print(erros)
             maxFim = max([abs(fim[x]) for x in range(len(fim))])
             maxErros = max(erros)
-            print(maxErros, maxFim)
-            print(maxErros/maxFim)
+            print("Erro da iteração atual: ", maxErros/maxFim)
             if maxErros/maxFim < erro:
+                print("Valores finais: ", valoresAtualizados)
                 return valoresAtualizados
 
             # if (maximoInicial / maximoFinal) < erro:
@@ -55,5 +55,5 @@ def calculaIteracao(linha, i, valoresIniciais):
     resultado = resultado / pivo
     return resultado
         
-print(gaussJacobi(m, valoresIniciais, erro=erro))
+gaussJacobi(m, valoresIniciais, erro=erro)
 # print(gaussJacobi(m, valoresIniciais, numeroDeIteracoes=numeroDeIteracoes))
