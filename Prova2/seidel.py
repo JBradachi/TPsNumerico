@@ -14,7 +14,6 @@ def main():
             break
     if n == 0: return
     m = len(equations[0])
-    print(f"{equations} {n} {m}")
     k = int(input("=> Número de iterações de Gauss-Seidel: "))
     x = gauss_seidel(equations, n, m, k)
     print(f"=> Solução estimada: {x}")
