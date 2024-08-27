@@ -21,4 +21,4 @@ funcao_ajustada, coeficientes = ajuste_quadratico(x, y)
 print("Coeficientes: a =", coeficientes[0], ", b =", coeficientes[1], ", c =", coeficientes[2])
 
 # Testando a função ajustada
-print("f(6) =", funcao_ajustada(0))
+print("f(0) =", funcao_ajustada(0))
