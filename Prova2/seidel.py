@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 def main():
     n = 0
     equations = []

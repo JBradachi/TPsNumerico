@@ -56,7 +56,6 @@ def main():
     n = 0
     equations = []
     print("=> Por favor, forneça a matriz aumentada do sistema linear:")
-    print("(NOTA: número de equações e incógnitas deve ser igual)")
     while True:
         try:
             row = [float(s) for s in input().split()]
